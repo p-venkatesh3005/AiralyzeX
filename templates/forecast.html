@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h2 class="mb-3">3-Day Pollution Forecast</h2>
+  <div class="table-responsive">
+    {{ table | safe }}
+  </div>
+  <div class="alert alert-warning mt-3">
+    {{ recommendations }}
+  </div>
+  <a href="{{ url_for('home') }}" class="btn btn-secondary">Back to Home</a>
+{% endblock %}

@@ -1,0 +1,17 @@
+body {
+  background-color: #f7f7f7;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+h1, h3 {
+  color: #34495e;
+}
+
+.table {
+  font-size: 0.9rem;
+}
+
+.btn {
+  padding: 10px 20px;
+  font-size: 1rem;
+}

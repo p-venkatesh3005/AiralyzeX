@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="text-center">
+  <h1 class="mb-4">
+    Welcome to <span style="color:#2c3e50; font-weight:600;">AiralyzeX</span>
+  </h1>
+  <p class="lead mb-4">
+    Get real-time air quality data and 3-day forecasts for <strong>Vishakhapatnam</strong>.
+  </p>
+  <p class="mb-5">
+    Stay informed about pollutant levels, health recommendations, and upcoming air quality trends.
+  </p>
+  <div class="d-grid gap-3 col-6 mx-auto">
+    <a href="{{ url_for('current') }}" class="btn btn-primary btn-lg">
+      📊 View Current Air Quality Index
+    </a>
+    <a href="{{ url_for('forecast') }}" class="btn btn-success btn-lg">
+      🔮 View 3-Day Forecast
+    </a>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h3 class="mb-4">3-Day Pollution Forecast</h3>
+<div class="row">
+  {% for day in forecasts %}
+  <div class="col-md-4 mb-3">
+    <div class="card h-100">
+      <div class="card-header bg-primary text-white">
+        <strong>{{ day.date }}</strong>
+      </div>
+      <div class="card-body">
+        <p><strong>NO₂:</strong> {{ day.NO2 }} µg/m³</p>
+        <p><strong>SO₂:</strong> {{ day.SO2 }} µg/m³</p>
+        <p><strong>PM2.5:</strong> {{ day['PM2.5'] }} µg/m³</p>
+        <p><strong>PM10:</strong> {{ day.PM10 }} µg/m³</p>
+        <hr>
+        <p><strong>⚠️ Alert Level:</strong> {{ day.alert_level }}</p>
+        <p><strong>✅ Suggestions:</strong> {{ day.suggestions }}</p>
+        <p><strong>⚕️ Possible Diseases:</strong> {{ day.diseases }}</p>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+<a href="/" class="btn btn-secondary mt-3">← Back to Home</a>
+{% endblock %}

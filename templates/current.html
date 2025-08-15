@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h2 class="mb-3">Current AQI Status</h2>
+  <ul class="list-group mb-3">
+    <li class="list-group-item"><strong>Date & Time:</strong> {{ record["datetime"] }}</li>
+    <li class="list-group-item"><strong>NO₂:</strong> {{ record["no2_value"] }}</li>
+    <li class="list-group-item"><strong>SO₂:</strong> {{ record["so2_value"] }}</li>
+    <li class="list-group-item"><strong>PM2.5:</strong> {{ record["pm25_value"] }}</li>
+    <li class="list-group-item"><strong>PM10:</strong> {{ record["pm10_value"] }}</li>
+    <li class="list-group-item"><strong>AQI Status:</strong> <span class="fw-bold">{{ aqi }}</span></li>
+  </ul>
+  <div class="alert alert-info">
+    {% if aqi == "Good" %}
+      ✅ The air quality is good. It's safe to go outdoors.
+    {% elif aqi == "Moderate" %}
+      ⚠️ Air quality is moderate. Sensitive individuals should consider limiting prolonged outdoor exertion.
+    {% elif aqi == "Unhealthy" %}
+      ⚠️ Air quality is unhealthy. It is advisable to wear a mask and avoid outdoor activities.
+    {% else %}
+      ❌ Air quality is very unhealthy. Stay indoors as much as possible.
+    {% endif %}
+  </div>
+  <a href="{{ url_for('home') }}" class="btn btn-secondary">Back to Home</a>
+{% endblock %}
