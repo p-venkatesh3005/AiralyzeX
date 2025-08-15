@@ -11,8 +11,8 @@ It collects, processes, and visualizes pollution data, predicting air quality fo
 
 
 ## 🛠 Tech Stack
-- **Frontend:** HTML, CSS, Bootstrap
+- **Frontend:** HTML, CSS, Bootstrap,Jinja2
 - **Backend:** Flask (Python)
 - **Database:** SQLite
-- **Libraries:** Pandas, NumPy, Matplotlib, Prophet 
+- **Libraries:** Pandas, NumPy, Matplotlib, Prophet
 
